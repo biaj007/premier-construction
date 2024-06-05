@@ -1,0 +1,33 @@
+plugins {
+    id 'java' // Apply the Java plugin first
+    id 'org.springframework.boot' version '3.2.5'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example.pc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17' // Set the Java version compatibility to 17
+
+repositories {
+    mavenCentral() // Use Maven Central repository for dependencies
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'com.h2database:h2' // For H2 database (or use your preferred database dependency)
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'mysql:mysql-connector-java:8.0.27'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+    
+
+    // Lombok dependencies for annotation processing
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
+
+tasks.withType(JavaCompile) {
+    options.annotationProcessorPath = configurations.annotationProcessor
+}
