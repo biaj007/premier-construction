@@ -14,4 +14,4 @@ RUN chmod +x ./gradlew
 RUN ./gradlew build
 
 # Run the application
-CMD ["java", "-jar", "build/libs/your-app.jar"]
+CMD ["java", "-jar", "build/libs/premier-construction-0.0.1-SNAPSHOT.jar"]
