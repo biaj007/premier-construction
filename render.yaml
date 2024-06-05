@@ -1,0 +1,5 @@
+services:
+  - name: spring-app
+    type: web
+    buildCommand: ./gradlew build
+    startCommand: java -jar build/libs/premier-construction.jar
