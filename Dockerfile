@@ -7,8 +7,11 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . .
 
+# Grant execute permissions on the gradlew script
+RUN chmod +x ./gradlew
+
 # Build the Spring Boot application
 RUN ./gradlew build
 
 # Run the application
-CMD ["java", "-jar", "build/libs/premier-construction.jar"]
+CMD ["java", "-jar", "build/libs/your-app.jar"]
